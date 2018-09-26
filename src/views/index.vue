@@ -8,14 +8,7 @@
         <p>助你C位出道！</p>
       </div>
     </div>
-    <div class="bar">
-      <ul>
-        <li v-bind:class="{ active: active == 1}">大赛介绍</li>
-        <li v-bind:class="{ active: active == 2}">注册报名</li>
-        <li v-bind:class="{ active: active == 3}">作品提交</li>
-        <li v-bind:class="{ active: active == 4}">作品展示</li>
-      </ul>
-    </div>
+    <data-hunter-bar active="1"/>
     <section class="description">
       <p> 随着企业各类业务数据不断增长，如何通过数据挖掘商业价值，并以统一、高效的形式呈现给管理者，从而提高分析决策效率以及加快市场影响速度，已成为所有企业最为关注的话题。这其中，数据可视化是必不可少的技术之一。
       </p>
@@ -242,7 +235,6 @@
     },
     data() {
       return {
-        active: 1,
       };
     },
   };
@@ -290,31 +282,6 @@
     }
   }
 
-  .bar {
-    width: 100%;
-    background-color: #0E2C49;
-    ul {
-      margin: 0 auto;
-      width: 62.5%;
-      min-width: 1200px;
-      height: 60px;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      list-style-type: none;
-      li {
-        flex: 0 0 25%;
-        color: #fff;
-        font-size: px2em(24px);
-        line-height: 60px;
-        text-align: center;
-        &.active {
-          background: #1C3C5A;
-        }
-      }
-    }
-  }
-
   .description {
     display: flex;
     flex-direction: column;
@@ -324,7 +291,7 @@
     width: 62.5%;
     min-width: 1200px;
     height: 332px;
-    font-size: px2em(20px);
+    font-size: 20px;
     color: #fff;
     line-height: 28px;
     p {
@@ -347,7 +314,7 @@
   .title {
     margin: 80px 0 40px;
     text-align: center;
-    font-size: px2em(36px);
+    font-size: 36px;
     color: #fff;
     &:first-child {
       margin: 0 0 40px;

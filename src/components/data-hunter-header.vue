@@ -2,13 +2,17 @@
     <div>
       <header>
         <div class="left">
-          <img src="@/assets/logo.png"/>
+          <div class="left-img">
+            <img src="@/assets/logo.png"/>
+          </div>
         </div>
         <div class="title">
           {{title}}
         </div>
-        <div class="right button">
-          进入系统
+        <div class="right">
+          <div class="button">
+            进入系统
+          </div>
         </div>
       </header>
     </div>
@@ -34,7 +38,16 @@
       justify-content: space-between;
       align-items: center;
     }
-    .left {
+
+    .left,.right {
+      width: 20%;
+    }
+    .right {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .left-img {
       position: relative;
       width: 150px;
       height: 26px;
