@@ -27,6 +27,7 @@
     height: 90px;
     font-size: 12px;
     color: #999;
+    background: #172333;
     text-align: center;
   }
 </style>

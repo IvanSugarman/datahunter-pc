@@ -177,11 +177,11 @@
       <div class="organizer">
         <div class="title">主办单位</div>
         <div class="organize organizer_center">
-          <img src="" alt="">
+          <img src="@/assets/thanks/thank1.png" alt="">
         </div>
         <div class="title">联合主办</div>
         <div class="organize organizer_center">
-          <img src="" alt="">
+          <img src="@/assets/thanks/thank2.png" alt="">
         </div>
         <div class="title">特别鸣谢</div>
         <ul>
@@ -241,12 +241,6 @@
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">
-  $browser-default-font-size: 192px !default;
-
-  @function px2em($px) {
-    @return $px / $browser-default-font-size * 1rem;
-  }
-
   #index {
     min-width: 1280px;
     margin: 0 auto;
@@ -526,12 +520,18 @@
     margin: 0 auto;
     padding-top: 90px;
     .organize {
+      position: relative;
       width: 260px;
       height: 90px;
       background: #fff;
       border:1px solid #d8d8d8;
       border-radius: 4px;
       margin: 0 auto;
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
     }
 
     ul {

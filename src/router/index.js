@@ -5,6 +5,7 @@ import Works from '@/views/works'
 import Sign from '@/views/sign'
 import Share from '@/views/share'
 import SubmitSuccess from '@/views/submit-success'
+import Submit from '@/views/submit'
 
 
 Vue.use(Router)
@@ -36,6 +37,11 @@ export default new Router({
       path: '/submit-success',
       name: 'submit-success',
       component: SubmitSuccess
+    },
+    {
+      path: '/submit',
+      name: 'submit',
+      component: Submit
     }
   ]
 })
