@@ -140,19 +140,19 @@
         }
 
         result = {
-          uid: 15,
+          uid: 11,
           content: JSON.stringify(this.item),
         };
 
         if (flag) {
           this.axios.post(this.$store.getters.getUrl('work'), Qs.stringify(result),
-            {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).then(response => {
+            { headers: {'Content-Type': 'application/x-www-form-urlencoded' }}).then(response => {
             if (response.data.code == '-3') {
               alert('此内容已上传过!');
             } else {
               alert('提交成功!');
-              location.reload();
               document.scrollElement.scrollTop = 0;
+              location.reload();
             }
           });
         }

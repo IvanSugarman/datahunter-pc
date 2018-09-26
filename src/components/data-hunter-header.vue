@@ -2,9 +2,9 @@
     <div>
       <header>
         <div class="left">
-          <div class="left-img">
+          <router-link tag="div" class="left-img" to="/">
             <img src="@/assets/logo.png"/>
-          </div>
+          </router-link>
         </div>
         <div class="title">
           {{title}}
@@ -51,6 +51,7 @@
       position: relative;
       width: 150px;
       height: 26px;
+      cursor: pointer;
 
       img {
         position: absolute;

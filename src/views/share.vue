@@ -27,7 +27,7 @@
               </div>
             </div>
           </div>
-          <div class="button" @click="showDialog(1)">投票</div>
+          <div class="button" @click="vote">投票</div>
         </div>
       </div>
       <div class="description">
@@ -39,6 +39,7 @@
       <data-hunter-footer/>
       <data-hunter-dialog type="success" v-show="showSuccess" @showDialog="showDialog"/>
       <data-hunter-dialog type="error" v-show="showError" @showDialog="showDialog"/>
+      <data-hunter-dialog type="login" v-show="showLogin" @showDialog="showDialog"/>
     </div>
   </div>
 </template>
@@ -56,6 +57,7 @@
         work: {},
         showSuccess: false,
         showError: false,
+        showLogin: false,
       };
     },
     methods: {
@@ -63,19 +65,38 @@
         this.axios.get(this.$store.getters.getUrl('work/one?wid=' + this.$route.params.id)).then(response => {
           response.data.data.content = JSON.parse(response.data.data.content);
           this.work = response.data.data;
-          console.log(this.work);
+        });
+      },
+      vote() {
+        let uid = 12;
+        let wid = this.$route.params.id;
+        let params = {
+          uid,
+          wid,
+        };
+
+        this.axios.post(this.$store.getters.getUrl('vote'), qs.stringify(params),
+          {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).then(res => {
+          if (res.data.code == -2) {
+            alert('已经给这个作品投过票了');
+          } else if (res.data.code == -1) {
+            this.showDialog(2);
+          } else {
+            this.showDialog(1);
+          }
         });
       },
       showDialog(type) {
         if (type == 1) {
-          this.showError = false;
           this.showSuccess = true;
         } else if (type == 2) {
           this.showError = true;
-          this.showSuccess = false;
+        } else if (type == 3) {
+          this.showLogin = true;
         } else if (!type) {
           this.showError = false;
           this.showSuccess = false;
+          this.showLogin = false;
         }
       },
       stopScrolling(e) {
@@ -104,7 +125,7 @@
 
   .share-item_wrapper {
     width: 100%;
-    background: rgba(14,44,73, .7);
+    background: rgba(14, 44, 73, .7);
   }
 
   .share-item {
