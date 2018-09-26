@@ -61,14 +61,14 @@
           <label for="cover">作品封面</label>
           <div class="form-input__file">
             <img src="@/assets/upload.png" alt="">
-            <input type="file" name="cover" id="cover"/>
+            <input type="file" name="cover" id="cover" @change="getImage" ref="fileInput">
           </div>
           <p class="tips">提示：请使用作品整体截图，建议尺寸1920x1080，1366x768，支持png，jpg格式</p>
         </div>
         <div class="form-input">
           <label>封面示意图</label>
-          <div>
-            <img src="@/assets/1.jpg" alt="">
+          <div class="form-show-image">
+            <img :src="item.cover" alt="" v-if="item.cover">
           </div>
         </div>
         <div class="button" @click="submit">确定提交</div>
@@ -79,6 +79,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import Qs from 'qs'
   export default{
     mounted() {
       document.getElementById("submit").style.minHeight = document.documentElement.clientHeight + 'px';
@@ -99,13 +100,35 @@
           description: true,
           href: true,
           explain: true,
-        }
+        },
+        image: '',
       };
     },
     methods: {
+      getImage: function () {
+        let image;
+
+        if (this.$refs.fileInput.files.length !== 0) {
+          image = new FormData();
+          image.append('imageFile', this.$refs.fileInput.files[0]);
+        }
+
+        this.axios.post(this.$store.getters.getUrl('image/upload'), image, {
+          headers: {
+            "Content-Type": "multipart/form-data"
+          }
+        }).then(res => {
+          if (res.data.code == -4) {
+            alert('上传图片出错!');
+          } else {
+            this.item.cover = 'http://www.geek-scorpion.com/' + res.data.data.path;
+          }
+        });
+
+      },
       submit: function () {
-        console.log(this.item);
-        let flag = true;
+        let result,
+          flag = true;
 
         for (let [k, v] of Object.entries(this.item)) {
           if (!v) {
@@ -115,10 +138,23 @@
             this.valid[k] = true;
           }
         }
-        console.log(this.valid);
+
+        result = {
+          uid: 15,
+          content: JSON.stringify(this.item),
+        };
 
         if (flag) {
-          console.log('提交');
+          this.axios.post(this.$store.getters.getUrl('work'), Qs.stringify(result),
+            {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).then(response => {
+            if (response.data.code == '-3') {
+              alert('此内容已上传过!');
+            } else {
+              alert('提交成功!');
+              location.reload();
+              document.scrollElement.scrollTop = 0;
+            }
+          });
         }
       }
     }
@@ -228,6 +264,17 @@
         opacity: 0;
       }
 
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .form-show-image {
+      position: relative;
+      width: 400px;
+      padding-bottom: 225px;
       img {
         position: absolute;
         width: 100%;

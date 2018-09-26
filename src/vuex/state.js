@@ -2,6 +2,7 @@
  * Created by jiangmq on 2018/9/25.
  */
 export default {
+  prefix: 'http://www.geek-scorpion.com/vote/',
   workList: [{
     id: 1,
     title: '销售管理看板销售管理看板',

@@ -14,24 +14,24 @@
         参赛作品列表
       </div>
       <ul>
-        <li v-for="item in workList" :key="item.id">
+        <router-link tag="li" :to="'/share/' + item.id" class="list-item" v-for="item in workList" :key="item.id">
           <div class="list-item__wrap">
             <div class="list-item__img">
-              <img src="@/assets/1.jpg"/>
+              <img :src="item.content.cover"/>
             </div>
             <div class="list-item__info">
               <div class="list-item__title">
-                {{item.title}}
+                {{item.content.name}}
               </div>
               <div class="list-item__author">
-                {{item.author}}
+                {{item.content.email}}
               </div>
               <div class="list-item__vote">
                 当前票数 <span>{{item.votes}}</span>
               </div>
             </div>
           </div>
-        </li>
+        </router-link>
       </ul>
     </div>
     <data-hunter-footer/>
@@ -39,6 +39,8 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import qs from 'qs';
+
   export default{
     mounted() {
       document.getElementById("works").style.minHeight = document.documentElement.clientHeight + 'px';
@@ -51,7 +53,16 @@
     },
     methods: {
       getWorksList: function () {
-        this.workList = this.$store.getters.getWorksList;
+        this.axios.get(this.$store.getters.getUrl('work/list')).then(response => {
+          response = qs.parse(response.data);
+          console.log(response.data);
+          response.data.map(item => {
+              if (item.content) {
+                item.content = JSON.parse(item.content);
+              }
+          });
+          this.workList = response.data;
+        });
       }
     }
   };
@@ -64,6 +75,10 @@
     @return $px / $browser-default-font-size * 1rem;
   }
 
+  .list-item {
+    cursor: pointer;
+  }
+
   #works {
     position: relative;
     min-width: 1280px;
@@ -71,7 +86,6 @@
     padding-bottom: 90px;
     background: rgb(16, 33, 49);
   }
-
 
   .banner {
     width: 100%;
@@ -149,7 +163,7 @@
           .list-item__author {
             color: rgba(255, 255, 255, .6);
           }
-          .list-item__vote span{
+          .list-item__vote span {
             margin-left: 5px;
           }
         }

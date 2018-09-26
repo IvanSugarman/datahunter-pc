@@ -25,6 +25,10 @@ export default new Vuex.Store({
         }
       });
       return result;
+    },
+    getUrl: state => (key) => {
+      let result = state.prefix + key;
+      return result;
     }
   },
   strict: debug

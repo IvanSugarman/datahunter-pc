@@ -5,25 +5,25 @@
       <div class="share-item_wrapper">
         <div class="share-item">
           <div class="share-item__img">
-            <img src="@/assets/1.jpg" alt="">
+            <img :src="work.content && work.content.cover"/>
           </div>
           <div class="share-item__info">
             <div>
               <div class="left">作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者</div>
               <div class="right share-item__author">
-                {{work.author}}
+                {{work.content && work.content.email}}
               </div>
             </div>
             <div>
-              <div class="left">作者名称</div>
+              <div class="left">作品名称</div>
               <div class="right share-item__title">
-                {{work.title}}
+                {{work.content && work.content.name}}
               </div>
             </div>
             <div>
-              <div class="left">作者简介</div>
+              <div class="left">作品简介</div>
               <div class="right share-item__description">
-                {{work.description}}
+                {{work.content && work.content.description}}
               </div>
             </div>
           </div>
@@ -44,10 +44,12 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import qs from 'qs';
+
   export default{
     mounted() {
       document.getElementById("share").style.minHeight = document.documentElement.clientHeight + 'px';
-      this.work = this.getWorksById(1);
+      this.getWorksById();
     },
     data() {
       return {
@@ -57,8 +59,12 @@
       };
     },
     methods: {
-      getWorksById(id) {
-        return this.$store.getters.getWorksById(id);
+      getWorksById() {
+        this.axios.get(this.$store.getters.getUrl('work/one?wid=' + this.$route.params.id)).then(response => {
+          response.data.data.content = JSON.parse(response.data.data.content);
+          this.work = response.data.data;
+          console.log(this.work);
+        });
       },
       showDialog(type) {
         if (type == 1) {

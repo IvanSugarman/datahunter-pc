@@ -95,6 +95,7 @@
       font-size: 16px;
       background-image: linear-gradient(37deg, #4DFF58 0%, #1ED884 94%);
       border-radius: 100px;
+      cursor: pointer;
     }
     .tips {
       text-align: center;

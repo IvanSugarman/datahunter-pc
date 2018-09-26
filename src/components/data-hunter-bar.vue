@@ -2,10 +2,10 @@
   <div>
     <div class="bar">
       <ul>
-        <li v-bind:class="{ active: active == 1}">大赛介绍</li>
-        <li v-bind:class="{ active: active == 2}">注册报名</li>
-        <li v-bind:class="{ active: active == 3}">作品提交</li>
-        <li v-bind:class="{ active: active == 4}">作品展示</li>
+        <router-link to="/" tag="li" v-bind:class="{ active: active == 1}">大赛介绍</router-link>
+        <router-link to="/sign" tag="li" v-bind:class="{ active: active == 2}">注册报名</router-link>
+        <router-link to="/submit" tag="li" v-bind:class="{ active: active == 3}">作品提交</router-link>
+        <router-link to="/works" tag="li" v-bind:class="{ active: active == 4}">作品展示</router-link>
       </ul>
     </div>
   </div>

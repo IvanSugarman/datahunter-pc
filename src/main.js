@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './vuex/index';
+import axios from 'axios';
+import VueAxios from 'vue-axios'
 
 import 'amfe-flexible'
 
@@ -13,6 +15,7 @@ import DataHunterBar from '@/components/data-hunter-bar';
 import DataHunterDialog from '@/components/data-hunter-dialog';
 
 Vue.config.productionTip = false;
+Vue.use(VueAxios,axios);
 
 Vue.component('data-hunter-header', DataHunterHeader);
 Vue.component('data-hunter-footer', DataHunterFooter);

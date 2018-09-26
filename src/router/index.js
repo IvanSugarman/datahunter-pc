@@ -29,8 +29,7 @@ export default new Router({
       component: Sign
     },
     {
-      path: '/share',
-      name: 'share',
+      path: '/share/:id',
       component: Share
     },
     {
@@ -43,5 +42,12 @@ export default new Router({
       name: 'submit',
       component: Submit
     }
-  ]
+  ],
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        selector: to.hash,
+      };
+    }
+  },
 })
