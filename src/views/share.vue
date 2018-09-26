@@ -77,13 +77,13 @@
 
         this.axios.post(this.$store.getters.getUrl('vote'), qs.stringify(params),
           {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).then(res => {
-          if (res.data.code == -2) {
-            alert('已经给这个作品投过票了');
-          } else if (res.data.code == -1) {
-            this.showDialog(2);
-          } else {
-            this.showDialog(1);
-          }
+              if (res.data.code == -2) {
+                  alert('已经给这个作品投过票了');
+              } else if (res.data.code == -1) {
+                  this.showDialog(2);
+              } else {
+                  this.showDialog(1);
+              }
         });
       },
       showDialog(type) {
@@ -91,9 +91,7 @@
           this.showSuccess = true;
         } else if (type == 2) {
           this.showError = true;
-        } else if (type == 3) {
-          this.showLogin = true;
-        } else if (!type) {
+         } else if (!type) {
           this.showError = false;
           this.showSuccess = false;
           this.showLogin = false;

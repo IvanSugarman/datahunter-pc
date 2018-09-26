@@ -36,17 +36,10 @@
           </div>
         </div>
         <div class="form-input">
-          <label for="description">作品简介</label>
-          <div>
-            <textarea name="description" id="description" placeholder="50字以内" v-model="item.description"
-                      :class="{'input-error': !valid.description}"></textarea>
-          </div>
-        </div>
-        <div class="form-input">
           <label for="explain">作品说明</label><span>（需要包含作品主题、作品逻辑以及数据分析说明等）</span>
           <div>
-            <textarea name="explain" id="explain" placeholder="不少于80字" v-model="item.explain"
-                      :class="{'input-error': !valid.explain}"></textarea>
+            <textarea name="explain" id="explain" placeholder="不少于80字" v-model="item.description"
+                      :class="{'input-error': !valid.description}"></textarea>
           </div>
         </div>
         <div class="form-input">
@@ -91,7 +84,6 @@
           name: '',
           description: '',
           href: '',
-          explain: '',
           cover: '',
         },
         valid: {
@@ -99,7 +91,6 @@
           name: true,
           description: true,
           href: true,
-          explain: true,
         },
         image: '',
       };
@@ -152,7 +143,7 @@
             } else {
               alert('提交成功!');
               document.scrollElement.scrollTop = 0;
-              location.reload();
+              this.$router.push('/submit-success/' + this.$route.params.id);
             }
           });
         }

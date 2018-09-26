@@ -33,8 +33,7 @@ export default new Router({
       component: Share
     },
     {
-      path: '/submit-success',
-      name: 'submit-success',
+      path: '/submit-success/:id',
       component: SubmitSuccess
     },
     {

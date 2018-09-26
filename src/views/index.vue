@@ -52,13 +52,19 @@
         <div class="request">
           <ul>
             <li>
-              <div><i>01</i>比赛仅接受个人报名</div>
+              <div>
+                <img src="@/assets/require/01.png">
+              </div>
             </li>
             <li>
-              <div><i>02</i>组织方员工及直系亲属不得参加比赛</div>
+              <div>
+                <img src="@/assets/require/02.png">
+              </div>
             </li>
             <li>
-              <div><i>03</i>使用DataHunter平台制作可视化作品</div>
+              <div>
+                <img src="@/assets/require/03.png">
+              </div>
             </li>
           </ul>
         </div>
@@ -69,9 +75,21 @@
             作品评分标准主要由三部分构成
           </div>
           <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            <li>
+              <div>
+                <img src="@/assets/standard/04.png">
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="@/assets/standard/05.png">
+              </div>
+            </li>
+            <li>
+              <div>
+                <img src="@/assets/standard/06.png">
+              </div>
+            </li>
           </ul>
         </div>
         <div class="title">数据要求</div>
@@ -89,78 +107,50 @@
       <div class="title">奖项设置</div>
       <ul>
         <li>
-          <img src="@/assets/reward1.png"/>
+          <img src="@/assets/reward/1.png"/>
         </li>
         <li>
-          <img src="@/assets/reward1.png"/>
+          <img src="@/assets/reward/2.png"/>
         </li>
         <li>
-          <img src="@/assets/reward1.png"/>
+          <img src="@/assets/reward/3.png"/>
         </li>
       </ul>
       <ul>
         <li>
-          <img src="@/assets/reward1.png"/>
+          <img src="@/assets/reward/4.png"/>
         </li>
         <li>
-          <img src="@/assets/reward1.png"/>
+          <img src="@/assets/reward/5.png"/>
         </li>
       </ul>
     </div>
     <div class="judge">
       <div class="title">大赛评委</div>
-      <ul class="judge__man">
+      <ul class="judge__man clearfix">
         <li>
           <div class="judge__img">
-            <img src="">
-          </div>
-          <div class="judge__name">韩要宾</div>
-          <div class="judge__description">
-            <p>杭州沐垚科技有限公司创始人</p>
-            <p>零一数据 创始人</p>
+            <img src="@/assets/guest/jiabin01.png">
           </div>
         </li>
         <li>
           <div class="judge__img">
-            <img src="">
-          </div>
-          <div class="judge__name">屠志鹏</div>
-          <div class="judge__description">
-            人工智能和大数据专家
-            国家系统分析员
+            <img src="@/assets/guest/jiabin02.png">
           </div>
         </li>
         <li>
           <div class="judge__img">
-            <img src="">
-          </div>
-          <div class="judge__name">
-            郑来轶
-          </div>
-          <div class="judge__description">
-            浙江执（JollyChic）数据分析总监
+            <img src="@/assets/guest/jiabin03.png">
           </div>
         </li>
         <li>
           <div class="judge__img">
-            <img src="">
-          </div>
-          <div class="judge__name">
-            程凯征
-          </div>
-          <div class="judge__description">
-            DataHunter CEO
+            <img src="@/assets/guest/jiabin04.png">
           </div>
         </li>
         <li>
           <div class="judge__img">
-            <img src="">
-          </div>
-          <div class="judge__name">
-            许双六
-          </div>
-          <div class="judge__description">
-            DataHunter 高级数据分析师
+            <img src="@/assets/guest/jiabin05.png">
           </div>
         </li>
       </ul>
@@ -254,10 +244,13 @@
     .content {
       position: relative;
       margin: 0 auto;
+      height: 100%;
       width: 62.5%;
       min-width: 1200px;
       padding: 4% 0 4% 4%;
       color: #fff;
+      background: url("/static/banner-part-02.png") 100% 0 no-repeat;
+      background-size: 640px 360px;
 
       p:nth-child(1) {
         margin-bottom: 7px;
@@ -362,10 +355,16 @@
     justify-content: space-around;
     list-style-type: none;
     li {
+      position: relative;
       width: 360px;
       height: 180px;
       flex: 0 0 30%;
       background-color: #123354;
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
@@ -388,10 +387,18 @@
       justify-content: space-around;
       list-style-type: none;
       li {
+        position: relative;
         width: 360px;
         height: 180px;
         flex: 0 0 30%;
         background-color: #123354;
+        img {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }
@@ -445,38 +452,28 @@
     margin: 0 auto 70px;
     .judge__man {
       list-style-type: none;
-      display: flex;
+      margin: 0 -30px;
       li {
-        display: flex;
-        flex: 0 0 20%;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        text-align: center;
-        .judge__img {
-          width: 190px;
-          height: 190px;
-          border-radius: 50%;
-          background-color: #d8d8d8;
-        }
-        .judge__name {
-          margin-top: 30px;
-          font-size: 24px;
-          color: #fff;
-          line-height: 33px;
-        }
-        .judge__description {
-          padding: 0 20px;
-          margin-top: 10px;
-          color: rgba(255, 255, 255, .6);
-          font-size: 20px;
-          line-height: 28px;
+        box-sizing: border-box;
+        width: 50%;
+        margin-bottom: 40px;
+        padding: 0 30px;
+        float: left;
+        div {
+          position: relative;
+          width: 100%;
+          padding-bottom: 57.19%;
+          img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+          }
         }
       }
     }
   }
 
-  .judge__rule{
+  .judge__rule {
     margin-top: 50px;
     p {
       text-align: center;
@@ -508,7 +505,6 @@
     }
   }
 
-
   .organizer_wrapper {
     width: 100%;
     background: #0E2C49;
@@ -524,7 +520,7 @@
       width: 260px;
       height: 90px;
       background: #fff;
-      border:1px solid #d8d8d8;
+      border: 1px solid #d8d8d8;
       border-radius: 4px;
       margin: 0 auto;
       img {
@@ -543,4 +539,5 @@
       }
     }
   }
+
 </style>

@@ -3,7 +3,7 @@
     <div class="Dialog" @click="prevent">
       <div class="Dialog__img">
         <img src="@/assets/success.png" alt="" v-if="this.type == 'success'">
-        <img src="@/assets/error.png" alt="" v-if="this.type == ('login' || 'error')">
+        <img src="@/assets/error.png" alt="" v-if="this.type == 'login' || this.type == 'error'">
       </div>
       <div class="Dialog__title">
         <p v-if="this.type == 'success'">投票成功!</p>
@@ -14,7 +14,10 @@
         <div class="Dialog__button_cancel" @click="closeDialog">返回</div>
         <router-link tag="div" to="/works" class="Dialog__button_login">去登录</router-link>
       </div>
-      <router-link tag="div" to="/works" class="Dialog__button" v-if="this.type == ('success' || 'error')">查看所有作品</router-link>
+      <div class="Dialog__login" v-if="this.type == 'success' || this.type == 'error'">
+        <router-link tag="div" to="/works" class="Dialog__button">查看所有作品</router-link>
+        <router-link tag="div" to="/" class="Dialog__button_join">我要参加</router-link>
+      </div>
       <div class="Dialog__close" @click="closeDialog">×</div>
     </div>
   </div>
@@ -22,13 +25,10 @@
 
 <script type="text/ecmascript-6">
   export default{
-      mounted(){
-        console.log(this.type);
-      },
     props: ['type', 'title'],
     data() {
       return {
-          showDialog: false,
+        showDialog: false,
       };
     },
     methods: {
@@ -36,9 +36,9 @@
         this.$emit('showDialog');
       },
       prevent(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
       }
     }
   };
@@ -94,19 +94,6 @@
     text-align: center;
   }
 
-  .Dialog__button {
-    cursor: pointer;
-    margin-top: 31px;
-    width: 160px;
-    height: 36px;
-    text-align: center;
-    background-image: linear-gradient(37deg, #1ED884 0%, #4DFF58 94%);
-    color: #fff;
-    font-size: 14px;
-    line-height: 36px;
-    border-radius: 100px;
-  }
-
   .Dialog__close {
     position: absolute;
     right: 5px;
@@ -119,34 +106,45 @@
   .Dialog__login {
     display: flex;
     margin-top: 25px;
-    justify-content: space-around;
+    justify-content: space-between;
+  }
+
+  .Dialog__button,
+  .Dialog__button_cancel,
+  .Dialog__button_login,
+  .Dialog__button_join {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    width: 140px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 16px;
+    border-radius: 100px;
   }
 
   .Dialog__button_cancel {
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    width: 120px;
-    height: 46px;
-    line-height: 46px;
-    border-radius: 100px;
     border: 1px solid #999999;
-    font-size: 16px;
     color: #999999;
+    width: 120px;
   }
 
   .Dialog__button_login {
-    cursor: pointer;
-    display: inline-block;
-    margin-left: 20px;
     background-image: linear-gradient(37deg, #4DFF58 0%, #1ED884 94%);
-    width: 120px;
-    height: 46px;
-    line-height: 46px;
-    border-radius: 100px;
     color: #fff;
-    font-size: 16px;
-    text-align: center;
+    width: 120px;
+    margin-left: 20px;
+  }
+
+  .Dialog__button {
+    background-image: linear-gradient(37deg, #1ED884 0%, #4DFF58 94%);
+    color: #fff;
+    margin-right: 20px;
+  }
+
+  .Dialog__button_join {
+    border: 1px solid #23C132;
+    color: #23C132;
   }
 
 </style>

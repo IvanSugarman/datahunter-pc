@@ -55,7 +55,6 @@
       getWorksList: function () {
         this.axios.get(this.$store.getters.getUrl('work/list')).then(response => {
           response = qs.parse(response.data);
-          console.log(response.data);
           response.data.map(item => {
               if (item.content) {
                 item.content = JSON.parse(item.content);
