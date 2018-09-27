@@ -3,5 +3,6 @@
  */
 export default {
   prefix: 'http://www.geek-scorpion.com/vote/',
-  uid: localStorage.getItem('uid') || '2432123',
+  uid: localStorage.getItem('uid') || '24321212123',
+  submit: {}
 };

@@ -19,5 +19,13 @@ export default new Vuex.Store({
     },
     getUid: state => state.uid,
   },
+  mutations: {
+    setSubmit (state, url, wid) {
+      state.submit = {
+        url,
+        wid,
+      }
+    }
+  },
   strict: debug
 });

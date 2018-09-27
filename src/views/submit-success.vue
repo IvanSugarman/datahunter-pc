@@ -13,7 +13,7 @@
       <p class="info">现在扫描下方二维码，将您的作品分享</p>
       <p class="info">给朋友，请他们投上宝贵一票！</p>
       <div class="qrcode">
-        <img src="@/assets/wechat.png">
+        <img :src="qrcode">
       </div>
       <p class="info">加最终票数，将计入总成绩的30%！</p>
     </div>
@@ -28,6 +28,7 @@
     },
     data() {
       return {
+          qrcode: "http://bshare.optimix.asia/barCode?site=weixin&url=" + location.href,
       };
     },
   };

@@ -69,6 +69,7 @@
   import Qs from 'qs'
   export default{
     mounted() {
+        console.log(this.$store.getters.getUid);
       document.getElementById("submit").style.minHeight = document.documentElement.clientHeight + 'px';
     },
     data() {
@@ -130,7 +131,7 @@
         }
 
         result = {
-          uid: this.$store.state.getters.getUid,
+          uid: this.$store.getters.getUid,
           content: JSON.stringify(this.item),
         };
 
@@ -140,9 +141,7 @@
             if (response.data.code == '-3') {
               alert('此内容已上传过!');
             } else {
-              alert('提交成功!');
-              document.scrollElement.scrollTop = 0;
-              this.$router.push('/submit-success/' + this.$route.params.id);
+              this.$router.push('/submit-success/' + response.data.data.id);
             }
           });
         }
