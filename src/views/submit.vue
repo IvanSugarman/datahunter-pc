@@ -177,6 +177,8 @@
       min-width: 1200px;
       padding: 4% 0 4% 4%;
       color: #fff;
+      background: url("/static/banner-part-02.png") 100% 0 no-repeat;
+      background-size: 640px 360px;
 
       p:nth-child(1) {
         margin-bottom: 7px;

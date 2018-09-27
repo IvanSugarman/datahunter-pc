@@ -9,97 +9,99 @@
       </div>
     </div>
     <data-hunter-bar active="1"/>
-    <section class="description">
-      <p> 随着企业各类业务数据不断增长，如何通过数据挖掘商业价值，并以统一、高效的形式呈现给管理者，从而提高分析决策效率以及加快市场影响速度，已成为所有企业最为关注的话题。这其中，数据可视化是必不可少的技术之一。
-      </p>
-      <p>
-        2018年10月，由DataHunter主办的首届数据可视化之星大赛火热开启！即日起至11月18日，通过DataHunter数据可视化分析平台制作并提交看板，就有机会成为DataHunter产品代言人，更有万元大奖等你拿！
-      </p>
-    </section>
-    <div class="info-wrapper">
-      <div class="info">
-        <div class="title">比赛流程</div>
-        <div class="process">
-          <ul>
-            <li>
-              <div class="step">1</div>
-              <p>报名提交</p>
-              <p>(10月10日-11月18日)</p>
-            </li>
-            <li>
-              <div class="step">2</div>
-              <p>网民投票</p>
-              <p>(10月10日-11月20日)</p>
-            </li>
-            <li>
-              <div class="step">3</div>
-              <p>专家评审</p>
-              <p>(11月21日-11月23日)</p>
-            </li>
-            <li>
-              <div class="step">4</div>
-              <p>分数统计</p>
-              <p>(11月24日)</p>
-            </li>
-            <li>
-              <div class="step">5</div>
-              <p>奖项公示</p>
-              <p>(11月26日)</p>
-            </li>
-          </ul>
-        </div>
-        <div class="title">参赛要求</div>
-        <div class="request">
-          <ul>
-            <li>
-              <div>
-                <img src="@/assets/require/01.png">
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src="@/assets/require/02.png">
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src="@/assets/require/03.png">
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="title">评分标准</div>
-        <div class="standard">
-          <p> 评分实行百分制，即满分100分（占比70%评委评分，30%网络投票）</p>
-          <div class="standard__title">
-            作品评分标准主要由三部分构成
+    <div class="content-wrapper">
+      <section class="description">
+        <p> 随着企业各类业务数据不断增长，如何通过数据挖掘商业价值，并以统一、高效的形式呈现给管理者，从而提高分析决策效率以及加快市场影响速度，已成为所有企业最为关注的话题。这其中，数据可视化是必不可少的技术之一。
+        </p>
+        <p>
+          2018年10月，由DataHunter主办的首届数据可视化之星大赛火热开启！即日起至11月18日，通过DataHunter数据可视化分析平台制作并提交看板，就有机会成为DataHunter产品代言人，更有万元大奖等你拿！
+        </p>
+      </section>
+      <div class="info-wrapper">
+        <div class="info">
+          <div class="title">比赛流程</div>
+          <div class="process">
+            <ul>
+              <li>
+                <div class="step">1</div>
+                <p>报名提交</p>
+                <p>(10月10日-11月18日)</p>
+              </li>
+              <li>
+                <div class="step">2</div>
+                <p>网民投票</p>
+                <p>(10月10日-11月20日)</p>
+              </li>
+              <li>
+                <div class="step">3</div>
+                <p>专家评审</p>
+                <p>(11月21日-11月23日)</p>
+              </li>
+              <li>
+                <div class="step">4</div>
+                <p>分数统计</p>
+                <p>(11月24日)</p>
+              </li>
+              <li>
+                <div class="step">5</div>
+                <p>奖项公示</p>
+                <p>(11月26日)</p>
+              </li>
+            </ul>
           </div>
-          <ul>
-            <li>
-              <div>
-                <img src="@/assets/standard/04.png">
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src="@/assets/standard/05.png">
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src="@/assets/standard/06.png">
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="title">数据要求</div>
-        <div class="process__data">
-          <p>1、参赛者可自行虚拟数据，或在确保数据脱敏的情况下使用自有数据，进行创意可视化展现。</p>
-          <p>2、如参赛者没有虚拟数据，可使用DataHunter提供的示例数据：DataHunter所提供的数据，不得用于其他任何目的。</p>
-          <p>3、参赛作品的知识产权归参赛作者所有。</p>
-          <p>4、DataHunter有权免费的不受限制使用参赛作品（包括作品中所含的原始数据， 设计，图表， 照片、作品相关、作者信息）包括但不
-            限于用于宣传品、指定及授权媒体发布、官方网站浏览及下载、 展览（含巡展）等活动项目。</p>
-          <span>下载:demo数据</span>
+          <div class="title">参赛要求</div>
+          <div class="request">
+            <ul>
+              <li>
+                <div>
+                  <img src="@/assets/require/01.png">
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="@/assets/require/02.png">
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="@/assets/require/03.png">
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="title">评分标准</div>
+          <div class="standard">
+            <p> 评分实行百分制，即满分100分（占比70%评委评分，30%网络投票）</p>
+            <div class="standard__title">
+              作品评分标准主要由三部分构成
+            </div>
+            <ul>
+              <li>
+                <div>
+                  <img src="@/assets/standard/04.png">
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="@/assets/standard/05.png">
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="@/assets/standard/06.png">
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="title">数据要求</div>
+          <div class="process__data">
+            <p>1、参赛者可自行虚拟数据，或在确保数据脱敏的情况下使用自有数据，进行创意可视化展现。</p>
+            <p>2、如参赛者没有虚拟数据，可使用DataHunter提供的示例数据：DataHunter所提供的数据，不得用于其他任何目的。</p>
+            <p>3、参赛作品的知识产权归参赛作者所有。</p>
+            <p>4、DataHunter有权免费的不受限制使用参赛作品（包括作品中所含的原始数据， 设计，图表， 照片、作品相关、作者信息）包括但不
+              限于用于宣传品、指定及授权媒体发布、官方网站浏览及下载、 展览（含巡展）等活动项目。</p>
+            <span>下载:demo数据</span>
+          </div>
         </div>
       </div>
     </div>
@@ -287,8 +289,13 @@
     }
   }
 
+  .content-wrapper {
+    background: url("/static/pc_bg.png") 100% 80px no-repeat;
+    background-size: 100% 100%;
+  }
+
   .info-wrapper {
-    background-color: #0E2C49;
+    background-color: rgba(14,44,73,.6);
   }
 
   .info {

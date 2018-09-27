@@ -131,7 +131,6 @@
     flex-direction: column;
     align-items: center;
     width: 62.5%;
-    min-width: 1200px;
     padding: 40px 0 80px 0;
     margin: 0 auto;
   }
