@@ -68,7 +68,7 @@
         });
       },
       vote() {
-        let uid = 12;
+        let uid = this.$store.getters.getUid;
         let wid = this.$route.params.id;
         let params = {
           uid,

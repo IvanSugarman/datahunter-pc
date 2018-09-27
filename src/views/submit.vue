@@ -1,13 +1,7 @@
 <template>
   <div class="wrapper" id="submit">
     <data-hunter-header title="可视化之星大赛"/>
-    <div class="banner">
-      <div class="content">
-        <p>DataHunter</p>
-        <p>首届数据可视化之星大赛</p>
-        <p>助你C位出道！</p>
-      </div>
-    </div>
+    <data-hunter-banner/>
     <data-hunter-bar active="3"/>
     <div class="info">
       <div class="title">
@@ -130,14 +124,19 @@
           }
         }
 
+        if (this.item.description.length < 80) {
+          this.valid.description = false;
+          flag = false;
+        }
+
         result = {
-          uid: 11,
+          uid: this.$store.state.getters.getUid,
           content: JSON.stringify(this.item),
         };
 
         if (flag) {
           this.axios.post(this.$store.getters.getUrl('work'), Qs.stringify(result),
-            { headers: {'Content-Type': 'application/x-www-form-urlencoded' }}).then(response => {
+            {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).then(response => {
             if (response.data.code == '-3') {
               alert('此内容已上传过!');
             } else {
@@ -165,36 +164,6 @@
     text-align: center;
     font-size: 36px;
     color: #fff;
-  }
-
-  .banner {
-    width: 100%;
-    height: 340px;
-    .content {
-      position: relative;
-      margin: 0 auto;
-      width: 62.5%;
-      min-width: 1200px;
-      padding: 4% 0 4% 4%;
-      color: #fff;
-      background: url("/static/banner-part-02.png") 100% 0 no-repeat;
-      background-size: 640px 360px;
-
-      p:nth-child(1) {
-        margin-bottom: 7px;
-        font-size: 36px;
-        line-height: 50px;
-      }
-      p:nth-child(2) {
-        margin-bottom: 11px;
-        font-size: 49px;
-        line-height: 68px;
-      }
-      p:nth-child(3) {
-        font-size: 32px;
-        line-height: 45px;
-      }
-    }
   }
 
   .info {
