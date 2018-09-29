@@ -126,10 +126,11 @@
             overflow: hidden;
           }
           .list-item__author {
+            font-size: 16px;
             color: rgba(255, 255, 255, .6);
           }
           .list-item__vote span {
-            margin-left: 5px;
+            margin-left: 20px;
           }
         }
       }

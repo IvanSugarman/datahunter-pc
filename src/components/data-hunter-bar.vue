@@ -23,7 +23,7 @@
 <style scoped lang="scss" rel="stylesheet/scss">
   .bar {
     width: 100%;
-    background-color: #0E2C49;
+    background-color: rgb(14,44,73);
     ul {
       margin: 0 auto;
       width: 62.5%;
@@ -36,11 +36,12 @@
       li {
         flex: 0 0 25%;
         cursor: pointer;
-        color: #fff;
-        font-size: 24px;
+        color: rgba(255, 255, 255, .8);
+        font-size: 20px;
         line-height: 60px;
         text-align: center;
         &.active {
+          color: #fff;
           background: #1C3C5A;
         }
       }

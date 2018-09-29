@@ -178,7 +178,7 @@
     p {
       width: 63%;
       margin: 0 auto;
-      font-size: 20px;
+      font-size: 16px;
       color: #fff;
     }
   }
@@ -264,7 +264,7 @@
       width: 100%;
       margin-bottom: 35px;
       opacity: .6;
-      font-size: 20px;
+      font-size: 16px;
       padding: 10px 20px;
       color: #fff;
       border-radius: 4px;

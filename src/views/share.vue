@@ -40,6 +40,7 @@
       <data-hunter-dialog type="success" v-show="showSuccess" @showDialog="showDialog"/>
       <data-hunter-dialog type="error" v-show="showError" @showDialog="showDialog"/>
       <data-hunter-dialog type="login" v-show="showLogin" @showDialog="showDialog"/>
+      <data-hunter-dialog type="alert" v-show="showAlert" @showDialog="showDialog"/>
     </div>
   </div>
 </template>
@@ -58,6 +59,7 @@
         showSuccess: false,
         showError: false,
         showLogin: false,
+        showAlert: false,
       };
     },
     methods: {
@@ -78,7 +80,7 @@
         this.axios.post(this.$store.getters.getUrl('vote'), qs.stringify(params),
           {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).then(res => {
               if (res.data.code == -2) {
-                  alert('已经给这个作品投过票了');
+                  this.showDialog(4);
               } else if (res.data.code == -1) {
                   this.showDialog(2);
               } else {
@@ -91,10 +93,15 @@
           this.showSuccess = true;
         } else if (type == 2) {
           this.showError = true;
-         } else if (!type) {
+        } else if (type == 3) {
+          this.showLogin = true;
+        } else if (type == 4) {
+          this.showAlert = true;
+        } else if (!type) {
           this.showError = false;
           this.showSuccess = false;
           this.showLogin = false;
+          this.showAlert = false;
         }
       },
       stopScrolling(e) {
@@ -201,7 +208,7 @@
       width: 70%;
       margin: 0 auto;
       color: rgba(255, 255, 255, .6);
-      font-size: 20px;
+      font-size: 16px;
       line-height: 36px;
       text-align: left;
     }

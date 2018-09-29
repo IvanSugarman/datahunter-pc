@@ -3,18 +3,19 @@
     <div class="Dialog" @click="prevent">
       <div class="Dialog__img">
         <img src="@/assets/success.png" alt="" v-if="this.type == 'success'">
-        <img src="@/assets/error.png" alt="" v-if="this.type == 'login' || this.type == 'error'">
+        <img src="@/assets/error.png" alt="" v-if="this.type == 'login' || this.type == 'error' || this.type == 'alert'">
       </div>
       <div class="Dialog__title">
         <p v-if="this.type == 'success'">投票成功!</p>
         <p v-if="this.type == 'error'">投票次数已达到上限，请明天再投!</p>
         <p v-if="this.type == 'login'">您尚未登录，请登录后操作！</p>
+        <p v-if="this.type == 'alert'">已经给这个作品投过票了</p>
       </div>
       <div class="Dialog__login" v-if="this.type == 'login'">
         <div class="Dialog__button_cancel" @click="closeDialog">返回</div>
         <router-link tag="div" to="/works" class="Dialog__button_login">去登录</router-link>
       </div>
-      <div class="Dialog__login" v-if="this.type == 'success' || this.type == 'error'">
+      <div class="Dialog__login" v-if="this.type == 'success' || this.type == 'error' || this.type == 'alert'">
         <router-link tag="div" to="/works" class="Dialog__button">查看所有作品</router-link>
         <router-link tag="div" to="/" class="Dialog__button_join">我要参加</router-link>
       </div>
@@ -100,6 +101,7 @@
     top: 0;
     color: #979797;
     font-size: 28px;
+    cursor: pointer;
     text-shadow: 0 1px 0 #fff;
   }
 

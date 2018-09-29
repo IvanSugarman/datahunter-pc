@@ -36,16 +36,16 @@
 
       p:nth-child(1) {
         margin-bottom: 7px;
-        font-size: 36px;
+        font-size: 28px;
         line-height: 50px;
       }
       p:nth-child(2) {
         margin-bottom: 11px;
-        font-size: 49px;
+        font-size: 36px;
         line-height: 68px;
       }
       p:nth-child(3) {
-        font-size: 32px;
+        font-size: 28px;
         line-height: 45px;
       }
     }

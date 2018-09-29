@@ -83,7 +83,7 @@
     }
     .info {
       color: rgba(255, 255, 255, .6);
-      font-size: 20px;
+      font-size: 16px;
       line-height: 28px;
       text-align: center;
     }

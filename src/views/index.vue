@@ -311,7 +311,7 @@
           border: 2px solid #23c132;
           width: 44px;
           height: 44px;
-          font-size: 16px;
+          font-size: 20px;
           color: #23c132;
           text-align: center;
           line-height: 44px;
@@ -341,7 +341,7 @@
 
   .standard {
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
     color: rgba(255, 255, 255, .6);
     line-height: 36px;
     p:first-child {
@@ -376,7 +376,7 @@
 
   .process__data {
     margin-top: -10px;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 36px;
     color: rgba(255, 255, 255, .6);
     span {
@@ -461,7 +461,7 @@
         position: relative;
         color: rgba(255, 255, 255, .6);
         line-height: 36px;
-        font-size: 20px;
+        font-size: 16px;
         &:before {
           position: absolute;
           top: 15px;
