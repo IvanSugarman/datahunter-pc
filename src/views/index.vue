@@ -94,7 +94,7 @@
             <p>3、参赛作品的知识产权归参赛作者所有。</p>
             <p>4、DataHunter有权免费的不受限制使用参赛作品（包括作品中所含的原始数据， 设计，图表， 照片、作品相关、作者信息）包括但不
               限于用于宣传品、指定及授权媒体发布、官方网站浏览及下载、 展览（含巡展）等活动项目。</p>
-            <router-link tag="span" to="/static/data.zip" download="data">下载:demo数据</router-link>
+            <a href="../../static/data.zip" download="data.zip">下载:demo数据</a>
           </div>
         </div>
       </div>
@@ -380,10 +380,11 @@
     font-size: 16px;
     line-height: 36px;
     color: rgba(255, 255, 255, .6);
-    span {
+    a {
       font-size: 16px;
       text-decoration: underline;
       cursor: pointer;
+      color: rgba(255, 255, 255, .6);
     }
   }
 
