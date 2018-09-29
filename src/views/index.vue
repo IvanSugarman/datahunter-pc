@@ -63,7 +63,7 @@
               </li>
             </ul>
           </div>
-          <div class="title">评分标准</div>
+          <div class="title title-standard">评分标准</div>
           <div class="standard">
             <p> 评分实行百分制，即满分100分（占比70%评委评分，30%网络投票）</p>
             <div class="standard__title">
@@ -94,7 +94,7 @@
             <p>3、参赛作品的知识产权归参赛作者所有。</p>
             <p>4、DataHunter有权免费的不受限制使用参赛作品（包括作品中所含的原始数据， 设计，图表， 照片、作品相关、作者信息）包括但不
               限于用于宣传品、指定及授权媒体发布、官方网站浏览及下载、 展览（含巡展）等活动项目。</p>
-            <span>下载:demo数据</span>
+            <router-link tag="span" to="/static/data.zip" download="data">下载:demo数据</router-link>
           </div>
         </div>
       </div>
@@ -244,12 +244,12 @@
     width: 62.5%;
     min-width: 1200px;
     height: 332px;
-    font-size: 20px;
+    font-size: 16px;
     color: #fff;
     line-height: 28px;
     p {
       width: 100%;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
   }
 
@@ -344,9 +344,6 @@
     font-size: 16px;
     color: rgba(255, 255, 255, .6);
     line-height: 36px;
-    p:first-child {
-      margin: -30px;
-    }
     .standard__title {
       margin: 50px 0 40px 0;
       font-size: 24px;
@@ -374,6 +371,10 @@
     }
   }
 
+  .title-standard {
+    margin-bottom: 15px;
+  }
+
   .process__data {
     margin-top: -10px;
     font-size: 16px;
@@ -382,6 +383,7 @@
     span {
       font-size: 16px;
       text-decoration: underline;
+      cursor: pointer;
     }
   }
 
@@ -488,7 +490,7 @@
     padding-top: 90px;
     .organize {
       position: relative;
-      width: 260px;
+      width: 224px;
       height: 90px;
       background: #fff;
       border: 1px solid #d8d8d8;
@@ -504,8 +506,9 @@
     ul {
       list-style-type: none;
       li {
-        width: 24.5%;
-        margin-bottom: 40px;
+        box-sizing: border-box;
+        width: 19.5%;
+        margin: 0 auto 40px auto;
         display: inline-block;
       }
     }

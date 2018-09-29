@@ -164,6 +164,7 @@
         flex: 0 0 85%;
         font-size: 14px;
         color: #fff;
+        word-break: break-all;
       }
     }
   }

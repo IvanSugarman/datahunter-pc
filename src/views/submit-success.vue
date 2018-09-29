@@ -72,7 +72,7 @@
     background: rgba(14, 44, 73, .6);
     .qrcode {
       position: relative;
-      margin: 40px auto;
+      margin: 25px auto;
       width: 140px;
       padding-bottom: 140px;
       img {
