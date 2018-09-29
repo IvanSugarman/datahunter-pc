@@ -12,6 +12,7 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history',
+  base: '/dataHunterPc/',
   routes: [
     {
       path: '/',
@@ -43,6 +44,12 @@ export default new Router({
     }
   ],
   scrollBehavior (to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        selector: to.hash
+      }
+    }
+
     if (savedPosition) {
       return savedPosition
     } else {

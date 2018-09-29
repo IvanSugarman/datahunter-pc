@@ -28,7 +28,7 @@
     },
     data() {
       return {
-          qrcode: "http://bshare.optimix.asia/barCode?site=weixin&url=" + location.href,
+          qrcode: "http://bshare.optimix.asia/barCode?site=weixin&url=http://case.geek-scorpion.com/dataHunterMobile/share-mobile/" + this.$route.params.id,
       };
     },
   };

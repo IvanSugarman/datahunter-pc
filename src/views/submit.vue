@@ -16,38 +16,39 @@
           信息提交
         </div>
         <div class="form-input">
-          <label for="email">常用邮箱</label>
+          <label for="email" id="email-label">常用邮箱</label>
           <div>
             <input id="email" type="text" placeholder="请输入邮箱地址" v-model="item.email"
                    :class="{'input-error': !valid.email}">
           </div>
         </div>
         <div class="form-input">
-          <label for="name">作品名称</label>
+          <label for="name" id="name-label">作品名称</label>
           <div>
             <input id="name" type="text" placeholder="请输入作品名称" v-model="item.name"
                    :class="{'input-error': !valid.name}">
           </div>
         </div>
         <div class="form-input">
-          <label for="explain">作品说明</label><span>（需要包含作品主题、作品逻辑以及数据分析说明等）</span>
+          <label for="description" id="description-label">作品说明</label><span>（不少于80字，需要包含作品主题、作品逻辑以及数据分析说明等）</span>
           <div>
-            <textarea name="explain" id="explain" placeholder="不少于80字" v-model="item.description"
+            <textarea name="description" id="description" placeholder="不少于80字" v-model="item.description"
                       :class="{'input-error': !valid.description}"></textarea>
           </div>
         </div>
         <div class="form-input">
-          <label for="href">作品看板链接</label>
+          <label for="href" id="href-label">作品看板链接</label>
           <div>
-            <textarea name="explain" id="href" placeholder="可提交相同主题下，多个看板链接，用1、2、3标明" v-model="item.href"
+            <textarea name="href" id="href" placeholder="可提交相同主题下，多个看板链接，用1、2、3标明" v-model="item.href"
                       :class="{'input-error': !valid.href}"></textarea>
           </div>
           <p class="tips">提示：作品收集截止后，将不得修改作品链接。请务必保证参赛期间，链接有效！</p>
         </div>
         <div class="form-input">
-          <label for="cover">作品封面</label>
+          <label for="cover" id="cover-label">作品封面</label>
           <div class="form-input__file">
-            <img src="@/assets/upload.png" alt="">
+            <img src="@/assets/upload.png" alt="" v-if="!item.cover">
+            <img :src="item.cover" alt="" v-if="item.cover">
             <input type="file" name="cover" id="cover" @change="getImage" ref="fileInput">
           </div>
           <p class="tips">提示：请使用作品整体截图，建议尺寸1920x1080，1366x768，支持png，jpg格式</p>
@@ -55,7 +56,7 @@
         <div class="form-input">
           <label>封面示意图</label>
           <div class="form-show-image">
-            <img :src="item.cover" alt="" v-if="item.cover">
+            <img src="@/assets/exp.png" alt="">
           </div>
         </div>
         <div class="button" @click="submit">确定提交</div>
@@ -69,7 +70,6 @@
   import Qs from 'qs'
   export default{
     mounted() {
-        console.log(this.$store.getters.getUid);
       document.getElementById("submit").style.minHeight = document.documentElement.clientHeight + 'px';
     },
     data() {
@@ -113,16 +113,22 @@
 
       },
       submit: function () {
-        let result,
-          flag = true;
+        let result;
+        let href;
+        let flag = true;
 
         for (let [k, v] of Object.entries(this.item)) {
           if (!v) {
             this.valid[k] = false;
             flag = false;
+            href = href ? href : k;
           } else {
             this.valid[k] = true;
           }
+        }
+
+        if (href) {
+            this.$router.push('/submit#' + href + '-label');
         }
 
         if (this.item.description.length < 80) {

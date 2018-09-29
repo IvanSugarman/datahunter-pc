@@ -254,7 +254,7 @@
   }
 
   .content-wrapper {
-    background: url("/static/pc_bg.png") 100% 80px no-repeat;
+    background: url("../../static/pc_bg.png") 100% 80px no-repeat;
     background-size: 100% 100%;
   }
 
