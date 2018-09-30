@@ -10,9 +10,11 @@
           {{title}}
         </div>
         <div class="right">
-          <div class="button">
-            进入系统
-          </div>
+          <a href="http://analytics.datahunter.cn/dashboard">
+            <div class="button">
+              进入系统
+            </div>
+          </a>
         </div>
       </header>
     </div>
@@ -77,4 +79,8 @@
       border-radius: 100px;
       cursor: pointer;
     }
+
+  a {
+    text-decoration: none;
+  }
 </style>
