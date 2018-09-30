@@ -23,6 +23,8 @@
   .banner {
     width: 100%;
     height: 340px;
+    background: url("../../static/banner-part-01.png") 0 0 no-repeat;
+    background-size: 65% 95%;
     .content {
       position: relative;
       margin: 0 auto;

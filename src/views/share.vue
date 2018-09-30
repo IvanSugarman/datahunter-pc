@@ -11,19 +11,19 @@
             <div>
               <div class="left">作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者</div>
               <div class="right share-item__author">
-                {{work.content && work.content.email}}
+                {{work.content && work.content.email || '暂无数据'}}
               </div>
             </div>
             <div>
               <div class="left">作品名称</div>
               <div class="right share-item__title">
-                {{work.content && work.content.name}}
+                {{work.content && work.content.name || '暂无数据'}}
               </div>
             </div>
             <div>
               <div class="left">作品简介</div>
               <div class="right share-item__description">
-                {{work.content && work.content.description}}
+                {{work.content && work.content.description  || '暂无数据'}}
               </div>
             </div>
           </div>
