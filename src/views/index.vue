@@ -170,44 +170,16 @@
           <img src="@/assets/thanks/thank2.png" alt="">
         </div>
         <div class="title">特别鸣谢</div>
-        <ul>
-          <li>
-            <div class="organize"></div>
-          </li>
-          <li>
-            <div class="organize"></div>
-          </li>
-          <li>
-            <div class="organize"></div>
-          </li>
-          <li>
-            <div class="organize"></div>
-          </li>
-          <li>
-            <div class="organize"></div>
-          </li>
-          <li>
-            <div class="organize"></div>
-          </li>
-          <li>
-            <div class="organize"></div>
-          </li>
-          <li>
-            <div class="organize"></div>
-          </li>
-          <li>
-            <div class="organize"></div>
-          </li>
-          <li>
-            <div class="organize"></div>
-          </li>
-          <li>
-            <div class="organize"></div>
-          </li>
-          <li>
-            <div class="organize"></div>
-          </li>
-        </ul>
+        <div class="organize organizer_center">
+          <img src="@/assets/thanks/thank3.png" alt="">
+        </div>
+        <!--<ul>-->
+          <!--<li>-->
+            <!--<div class="organize">-->
+              <!--<img src="@/assets/thanks/thank3.png" alt="">-->
+            <!--</div>-->
+          <!--</li>-->
+        <!--</ul>-->
       </div>
     </div>
     <data-hunter-footer/>
@@ -327,9 +299,9 @@
     list-style-type: none;
     li {
       position: relative;
-      width: 360px;
-      height: 180px;
       flex: 0 0 30%;
+      padding-bottom: 15%;
+      width: 30%;
       background-color: #123354;
       img {
         position: absolute;
@@ -356,8 +328,8 @@
       list-style-type: none;
       li {
         position: relative;
-        width: 360px;
-        height: 180px;
+        padding-bottom: 15%;
+        width: 30%;
         flex: 0 0 30%;
         background-color: #123354;
         img {
@@ -398,24 +370,19 @@
       margin-bottom: 50px;
       list-style-type: none;
       display: flex;
-      justify-content: space-around;
+      justify-content: flex-start;
       li {
         flex: 0 0 380px;
         display: inline-block;
         position: relative;
         width: 380px;
+        margin-right: 50px;
         padding-bottom: 240px;
         img {
           position: absolute;
           width: 100%;
           height: 100%;
         }
-      }
-    }
-    ul:last-child {
-      justify-content: center;
-      li + li {
-        margin-left: 30px;
       }
     }
   }
@@ -436,7 +403,7 @@
         div {
           position: relative;
           width: 100%;
-          padding-bottom: 57.19%;
+          padding-bottom: 45.6%;
           img {
             position: absolute;
             width: 100%;
@@ -488,7 +455,7 @@
     width: 62.5%;
     min-width: 1200px;
     margin: 0 auto;
-    padding-top: 90px;
+    padding: 90px 0;
     .organize {
       position: relative;
       width: 224px;
@@ -503,16 +470,15 @@
         height: 100%;
       }
     }
-
-    ul {
-      list-style-type: none;
-      li {
-        box-sizing: border-box;
-        width: 19.5%;
-        margin: 0 auto 40px auto;
-        display: inline-block;
-      }
-    }
+    /*ul {*/
+      /*list-style-type: none;*/
+      /*li {*/
+        /*box-sizing: border-box;*/
+        /*width: 19.5%;*/
+        /*margin: 0 auto 40px auto;*/
+        /*display: inline-block;*/
+      /*}*/
+    /*}*/
   }
 
 </style>

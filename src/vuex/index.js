@@ -18,13 +18,12 @@ export default new Vuex.Store({
       return result;
     },
     getUid: state => state.uid,
+    getAuthor: state => state.name,
   },
   mutations: {
-    setSubmit (state, url, wid) {
-      state.submit = {
-        url,
-        wid,
-      }
+    setUid (state, payload) {
+      state.uid = payload.uid;
+      state.name = payload.name;
     }
   },
   strict: debug

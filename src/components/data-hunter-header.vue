@@ -10,7 +10,7 @@
           {{title}}
         </div>
         <div class="right">
-          <a href="http://analytics.datahunter.cn/dashboard">
+          <a href="https://analytics.datahunter.cn/dashboard">
             <div class="button">
               进入系统
             </div>

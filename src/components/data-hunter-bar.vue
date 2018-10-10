@@ -12,10 +12,13 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import qs from 'qs';
+
   export default{
     props: ['active'],
     data() {
-      return {};
+      return {
+      };
     },
   };
 </script>
@@ -23,7 +26,7 @@
 <style scoped lang="scss" rel="stylesheet/scss">
   .bar {
     width: 100%;
-    background-color: rgb(14,44,73);
+    background-color: rgb(14, 44, 73);
     ul {
       margin: 0 auto;
       width: 62.5%;

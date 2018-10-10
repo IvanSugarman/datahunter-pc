@@ -1,12 +1,26 @@
 <template>
   <div id="app">
     <router-view/>
+    <iframe src="https://analytics.datahunter.cn" frameborder="0" id="child" width="0" height="0"></iframe>
   </div>
 </template>
 
 <script>
   export default {
     name: 'App',
+    mounted() {
+      window.addEventListener('message', (event) => {
+        try {
+          if (event.data.auth) {
+            this.$store.commit('setUid', {
+              uid: event.data.user._id,
+              name: event.data.user.name,
+            });
+          }
+        } catch (e) {}
+      });
+      console.log(this.$store.state.uid);
+    },
   }
 </script>
 

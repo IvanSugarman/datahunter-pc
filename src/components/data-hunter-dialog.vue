@@ -13,7 +13,9 @@
       </div>
       <div class="Dialog__login" v-if="this.type == 'login'">
         <div class="Dialog__button_cancel" @click="closeDialog">返回</div>
-        <router-link tag="div" to="/works" class="Dialog__button_login">去登录</router-link>
+        <div class="Dialog__button_login" @click="login">
+          去登录
+        </div>
       </div>
       <div class="Dialog__login" v-if="this.type == 'success' || this.type == 'error' || this.type == 'alert'">
         <router-link tag="div" to="/works" class="Dialog__button">查看所有作品</router-link>
@@ -30,11 +32,15 @@
     data() {
       return {
         showDialog: false,
+        loginUrl: 'https://analytics.datahunter.cn/account/#/login',
       };
     },
     methods: {
       closeDialog() {
         this.$emit('showDialog');
+      },
+      login() {
+          location.href = this.loginUrl;
       },
       prevent(e) {
         e.preventDefault();

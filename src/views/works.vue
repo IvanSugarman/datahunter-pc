@@ -18,7 +18,7 @@
                 {{item.content.name || '暂无数据'}}
               </div>
               <div class="list-item__author">
-                {{item.content.email || '暂无数据'}}
+                {{item.content.author || '暂无数据'}}
               </div>
               <div class="list-item__vote">
                 当前票数 <span>{{item.votes}}</span>

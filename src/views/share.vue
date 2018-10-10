@@ -11,7 +11,7 @@
             <div>
               <div class="left">作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者</div>
               <div class="right share-item__author">
-                {{work.content && work.content.email || '暂无数据'}}
+                {{work.content && work.content.author || '暂无数据'}}
               </div>
             </div>
             <div>
@@ -76,6 +76,11 @@
           uid,
           wid,
         };
+
+        if (!uid) {
+            this.showLogin = true;
+            return;
+        }
 
         this.axios.post(this.$store.getters.getUrl('vote'), qs.stringify(params),
           {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).then(res => {

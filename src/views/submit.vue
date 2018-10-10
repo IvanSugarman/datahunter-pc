@@ -62,14 +62,25 @@
       </div>
     </div>
     <data-hunter-footer/>
+    <data-hunter-dialog type="login" v-show="showLogin" @showDialog="showDialog"/>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-  import Qs from 'qs'
+  import Qs from 'qs';
+
   export default{
-    mounted() {
+    mounted: function () {
+      let uid = this.$store.getters.getUid;
+      let router = this.$router;
+      let url = this.$store.getters.getUrl('isCommit?uid=' + uid);
       document.getElementById("submit").style.minHeight = document.documentElement.clientHeight + 'px';
+
+      this.axios.get(url).then(res => {
+        if (JSON.parse(res.data.data)) {
+            router.push('/submit-success/' + uid);
+        }
+      });
     },
     data() {
       return {
@@ -79,6 +90,7 @@
           description: '',
           href: '',
           cover: '',
+          author: '',
         },
         valid: {
           email: true,
@@ -87,6 +99,7 @@
           href: true,
         },
         image: '',
+        showLogin: false,
       };
     },
     methods: {
@@ -109,12 +122,25 @@
             this.item.cover = 'http://www.geek-scorpion.com/' + res.data.data.path;
           }
         });
-
+      },
+      showDialog(type) {
+          if (type) {
+              this.showLogin = true;
+          } else {
+              this.showLogin = false;
+          }
       },
       submit: function () {
         let result;
         let href;
+        let uid = this.$store.getters.getUid;
+        let author = this.$store.getters.getAuthor;
         let flag = true;
+
+        if (!uid) {
+          this.showLogin = true;
+          return;
+        }
 
         for (let [k, v] of Object.entries(this.item)) {
           if (!v) {
@@ -134,6 +160,8 @@
           this.valid.description = false;
           flag = false;
         }
+
+        this.item.author = author;
 
         result = {
           uid: this.$store.getters.getUid,
