@@ -6,9 +6,9 @@
             <img src="@/assets/logo.png"/>
           </router-link>
         </div>
-        <div class="title">
-          {{title}}
-        </div>
+        <!--<div class="title">-->
+          <!--{{title}}-->
+        <!--</div>-->
         <div class="right">
           <a href="https://analytics.datahunter.cn/dashboard">
             <div class="button">
