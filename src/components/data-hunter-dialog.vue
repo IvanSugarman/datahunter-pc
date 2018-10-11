@@ -21,7 +21,7 @@
         <router-link tag="div" to="/" class="Dialog__button_join">我要参加</router-link>
       </div>
       <p class="Dialog__tip" v-if="this.type == 'login'">登录完成后，请刷新该页面</p>
-      <div class="Dialog__close" @click="closeDialog" v-if="this.type != 'login'">×</div>
+      <div class="Dialog__close" @click="closeDialog">×</div>
     </div>
   </div>
 </template>

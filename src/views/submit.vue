@@ -131,6 +131,8 @@
       showDialog(type) {
           if (type) {
               this.showLogin = true;
+          } else {
+              this.showLogin = false;
           }
       },
       prevent(e) {
@@ -146,6 +148,11 @@
         let uid = this.$store.getters.getUid;
         let author = this.$store.getters.getAuthor;
         let flag = true;
+
+        if (!uid) {
+            this.showLogin = true;
+            return;
+        }
 
         for (let [k, v] of Object.entries(this.item)) {
           if (!v) {
@@ -169,7 +176,7 @@
         this.item.author = author;
 
         result = {
-          uid: this.$store.getters.getUid,
+          uid: uid,
           content: JSON.stringify(this.item),
         };
 
