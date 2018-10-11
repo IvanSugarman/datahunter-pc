@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" id="submit">
+  <div class="wrapper" id="submit" @scroll="prevent" @click="prevent" @mousewheel="prevent">
     <data-hunter-header title="可视化之星大赛"/>
     <data-hunter-banner/>
     <data-hunter-bar active="3"/>
@@ -73,14 +73,19 @@
     mounted: function () {
       let uid = this.$store.getters.getUid;
       let router = this.$router;
-      let url = this.$store.getters.getUrl('isCommit?uid=' + uid);
+      let url;
       document.getElementById("submit").style.minHeight = document.documentElement.clientHeight + 'px';
 
-      this.axios.get(url).then(res => {
-        if (JSON.parse(res.data.data)) {
+      if (!uid) {
+        this.showLogin = true;
+      } else {
+        url = this.$store.getters.getUrl('isCommit?uid=' + uid);
+        this.axios.get(url).then(res => {
+          if (JSON.parse(res.data.data)) {
             router.push('/submit-success/' + uid);
-        }
-      });
+          }
+        });
+      }
     },
     data() {
       return {
@@ -126,9 +131,14 @@
       showDialog(type) {
           if (type) {
               this.showLogin = true;
-          } else {
-              this.showLogin = false;
           }
+      },
+      prevent(e) {
+        if (this.showLogin) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
       },
       submit: function () {
         let result;
@@ -136,11 +146,6 @@
         let uid = this.$store.getters.getUid;
         let author = this.$store.getters.getAuthor;
         let flag = true;
-
-        if (!uid) {
-          this.showLogin = true;
-          return;
-        }
 
         for (let [k, v] of Object.entries(this.item)) {
           if (!v) {

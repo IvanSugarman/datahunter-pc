@@ -8,11 +8,10 @@
       <div class="Dialog__title">
         <p v-if="this.type == 'success'">投票成功!</p>
         <p v-if="this.type == 'error'">投票次数已达到上限，请明天再投!</p>
-        <p v-if="this.type == 'login'">您尚未登录，请登录后操作！</p>
+        <p v-if="this.type == 'login'">您尚未登录</p>
         <p v-if="this.type == 'alert'">已经给这个作品投过票了</p>
       </div>
       <div class="Dialog__login" v-if="this.type == 'login'">
-        <div class="Dialog__button_cancel" @click="closeDialog">返回</div>
         <div class="Dialog__button_login" @click="login">
           去登录
         </div>
@@ -21,7 +20,8 @@
         <router-link tag="div" to="/works" class="Dialog__button">查看所有作品</router-link>
         <router-link tag="div" to="/" class="Dialog__button_join">我要参加</router-link>
       </div>
-      <div class="Dialog__close" @click="closeDialog">×</div>
+      <p class="Dialog__tip" v-if="this.type == 'login'" 登录完成后，请刷新该页面</p>
+      <div class="Dialog__close" @click="closeDialog" v-if="this.type != 'login'">×</div>
     </div>
   </div>
 </template>
@@ -111,6 +111,12 @@
     text-shadow: 0 1px 0 #fff;
   }
 
+  .Dialog__tip {
+    margin-top: 10px;
+    color: #979797;
+    font-size: 14px;
+  }
+
   .Dialog__login {
     display: flex;
     margin-top: 25px;
@@ -140,8 +146,7 @@
   .Dialog__button_login {
     background-image: linear-gradient(37deg, #4DFF58 0%, #1ED884 94%);
     color: #fff;
-    width: 120px;
-    margin-left: 20px;
+    width: 140px;
   }
 
   .Dialog__button {

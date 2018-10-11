@@ -27,7 +27,6 @@
               </div>
             </div>
           </div>
-          <div class="button" @click="vote">投票</div>
         </div>
       </div>
       <div class="description">
@@ -69,30 +68,30 @@
           this.work = response.data.data;
         });
       },
-      vote() {
-        let uid = this.$store.getters.getUid;
-        let wid = this.$route.params.id;
-        let params = {
-          uid,
-          wid,
-        };
-
-        if (!uid) {
-            this.showLogin = true;
-            return;
-        }
-
-        this.axios.post(this.$store.getters.getUrl('vote'), qs.stringify(params),
-          {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).then(res => {
-              if (res.data.code == -2) {
-                  this.showDialog(4);
-              } else if (res.data.code == -1) {
-                  this.showDialog(2);
-              } else {
-                  this.showDialog(1);
-              }
-        });
-      },
+      // vote() {
+      //   let uid = this.$store.getters.getUid;
+      //   let wid = this.$route.params.id;
+      //   let params = {
+      //     uid,
+      //     wid,
+      //   };
+      //
+      //   if (!uid) {
+      //       this.showLogin = true;
+      //       return;
+      //   }
+      //
+      //   this.axios.post(this.$store.getters.getUrl('vote'), qs.stringify(params),
+      //     {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).then(res => {
+      //         if (res.data.code == -2) {
+      //             this.showDialog(4);
+      //         } else if (res.data.code == -1) {
+      //             this.showDialog(2);
+      //         } else {
+      //             this.showDialog(1);
+      //         }
+      //   });
+      // },
       showDialog(type) {
         if (type == 1) {
           this.showSuccess = true;
