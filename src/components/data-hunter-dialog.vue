@@ -20,7 +20,7 @@
         <router-link tag="div" to="/works" class="Dialog__button">查看所有作品</router-link>
         <router-link tag="div" to="/" class="Dialog__button_join">我要参加</router-link>
       </div>
-      <p class="Dialog__tip" v-if="this.type == 'login'" 登录完成后，请刷新该页面</p>
+      <p class="Dialog__tip" v-if="this.type == 'login'">登录完成后，请刷新该页面</p>
       <div class="Dialog__close" @click="closeDialog" v-if="this.type != 'login'">×</div>
     </div>
   </div>
@@ -40,7 +40,7 @@
         this.$emit('showDialog');
       },
       login() {
-          location.href = this.loginUrl;
+          window.open(this.loginUrl);
       },
       prevent(e) {
         e.preventDefault();
