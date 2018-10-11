@@ -119,7 +119,7 @@
           if (res.data.code == -4) {
             alert('上传图片出错!');
           } else {
-            this.item.cover = 'http://www.geek-scorpion.com/' + res.data.data.path;
+            this.item.cover = 'http://vote.datahunter.cn' + res.data.data.path;
           }
         });
       },
@@ -174,7 +174,7 @@
             if (response.data.code == '-3') {
               alert('此内容已上传过!');
             } else {
-              this.$router.push('/submit-success/' + response.data.data.id);
+              this.$router.push('/submit-success/' + response.data.data.id + '#success-image');
             }
           });
         }

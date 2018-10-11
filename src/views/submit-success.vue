@@ -4,7 +4,7 @@
     <data-hunter-banner/>
     <data-hunter-bar active="3"/>
     <div class="container">
-      <div class="success-image">
+      <div class="success-image" id="success-image">
         <img src="@/assets/success.png" alt="">
       </div>
       <p class="success-info">您已成功提交作品！</p>
@@ -15,7 +15,7 @@
       <div class="qrcode">
         <img :src="qrcode">
       </div>
-      <p class="info">加最终票数，将计入总成绩的30%！</p>
+      <p class="info">最终票数，将计入总成绩的30%！</p>
     </div>
     <data-hunter-footer/>
   </div>
@@ -28,7 +28,7 @@
     },
     data() {
       return {
-          qrcode: "http://bshare.optimix.asia/barCode?site=weixin&url=http://www.geek-scorpion.com/wechat/oauth/base?redirect=http://case.geek-scorpion.com/dataHunterMobile/share-mobile/" + this.$route.params.id,
+          qrcode: "http://bshare.optimix.asia/barCode?site=weixin&url=http://www.geek-scorpion.com/wechat/oauth/base?redirect=http://vote.datahunter.cn/dataHunterMobile/share-mobile/" + this.$route.params.id,
       };
     },
   };
