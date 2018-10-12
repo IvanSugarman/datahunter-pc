@@ -8,18 +8,21 @@
 <script>
   export default {
     name: 'App',
-    mounted() {
+    beforeMount () {
+      this.$store.commit('setUid', {
+        uid: localStorage.getItem('dataHunterUid'),
+        name: localStorage.getItem('dataHunterName'),
+      });
       window.addEventListener('message', (event) => {
-        try {
           if (event.data.auth) {
+            localStorage.setItem('dataHunterUid', event.data.user._id);
+            localStorage.setItem('dataHunterName', event.data.user.name);
             this.$store.commit('setUid', {
-              uid: event.data.user._id,
-              name: event.data.user.name,
+              uid: localStorage.getItem('dataHunterUid'),
+              name: localStorage.getItem('dataHunterName'),
             });
           }
-        } catch (e) {}
       });
-      console.log(this.$store.state.uid);
     },
   }
 </script>

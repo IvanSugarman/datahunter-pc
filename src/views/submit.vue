@@ -67,7 +67,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import Qs from 'qs';
+  import qs from 'qs';
 
   export default{
     mounted: function () {
@@ -77,20 +77,20 @@
       document.getElementById("submit").style.minHeight = document.documentElement.clientHeight + 'px';
 
       if (!uid) {
-        this.showLogin = true;
-      } else {
+          this.showLogin = true;
+    } else {
         url = this.$store.getters.getUrl('isCommit?uid=' + uid);
-        this.axios.get(url).then(res => {
-          let result = JSON.parse(res.data.data);
-          if (result.commit) {
-            router.push('/submit-success/' + result.wid + '#success-image');
+        this.axios.get(url).then(response => {
+          response = qs.parse(response.data);
+          if (response.data.commit) {
+            router.push('/submit-success/' + response.data.wid + '#success-image');
           }
         });
       }
     },
-    data() {
-      return {
-        item: {
+      data() {
+        return {
+          item: {
           email: '',
           name: '',
           description: '',

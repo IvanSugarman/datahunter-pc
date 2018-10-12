@@ -1,9 +1,9 @@
 <template xmlns:v-bind="http://www.w3.org/1999/xhtml">
   <div>
-    <div class="bar">
+    <div class="bar" id="bar">
       <ul>
         <router-link to="/" tag="li" v-bind:class="{ active: active == 1}">大赛介绍</router-link>
-        <router-link to="/sign" tag="li" v-bind:class="{ active: active == 2}">注册报名</router-link>
+        <router-link to="/sign#bar" tag="li" v-bind:class="{ active: active == 2}">注册报名</router-link>
         <router-link to="/submit" tag="li" v-bind:class="{ active: active == 3}">作品提交</router-link>
         <router-link to="/works" tag="li" v-bind:class="{ active: active == 4}">作品展示</router-link>
       </ul>
@@ -12,8 +12,6 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import qs from 'qs';
-
   export default{
     props: ['active'],
     data() {

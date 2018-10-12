@@ -188,6 +188,7 @@
 <script type="text/ecmascript-6">
   export default{
     mounted() {
+      console.log(2);
       document.getElementById("index").style.minHeight = document.documentElement.clientHeight + 'px';
     },
     data() {
