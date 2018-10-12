@@ -81,8 +81,9 @@
       } else {
         url = this.$store.getters.getUrl('isCommit?uid=' + uid);
         this.axios.get(url).then(res => {
-          if (JSON.parse(res.data.data)) {
-            router.push('/submit-success/' + uid);
+          let result = JSON.parse(res.data.data);
+          if (result.commit) {
+            router.push('/submit-success/' + result.wid + '#success-image');
           }
         });
       }
