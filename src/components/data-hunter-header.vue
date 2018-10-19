@@ -2,9 +2,14 @@
     <div>
       <header>
         <div class="left">
-          <router-link tag="div" class="left-img" to="/">
-            <img src="@/assets/logo.png"/>
-          </router-link>
+          <!--<router-link tag="div" class="left-img" to="/">-->
+            <!--<img src="@/assets/logo.png"/>-->
+          <!--</router-link>-->
+          <a href="https://www.datahunter.cn/">
+            <div class="left-img">
+              <img src="@/assets/logo.png"/>
+            </div>
+          </a>
         </div>
         <!--<div class="title">-->
           <!--{{title}}-->
