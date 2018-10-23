@@ -182,7 +182,7 @@
         };
 
         if (flag) {
-          this.axios.post(this.$store.getters.getUrl('work'), Qs.stringify(result),
+          this.axios.post(this.$store.getters.getUrl('work'), qs.stringify(result),
             {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).then(response => {
             if (response.data.code == '-3') {
               alert('此内容已上传过!');
