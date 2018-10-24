@@ -5,7 +5,7 @@
     <data-hunter-bar active="2"/>
     <div class="container">
       <p>点击下方按钮立即注册</p>
-      <a href="http://analytics.datahunter.cn/account/#/register" target="_blank">
+      <a href="https://analytics.datahunter.cn/account/#/register?channel=vote" target="_blank">
         <div class="button">立即注册</div>
       </a>
       <p class="tips">注册成功之后，视为自动报名成功！</p>
