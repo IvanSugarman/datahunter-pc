@@ -1,9 +1,6 @@
 <template>
   <div id="app">
     <router-view/>
-    <span style="display: none">
-        <script src=https://s22.cnzz.com/z_stat.php?id=1275131137&web_id=1275131137" language="JavaScript"></script>
-    </span>
     <iframe src="https://analytics.datahunter.cn" frameborder="0" id="child" width="0" height="0"></iframe>
   </div>
 </template>
