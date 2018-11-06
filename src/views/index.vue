@@ -169,16 +169,21 @@
           <img src="@/assets/thanks/thank2.png" alt="">
         </div>
         <div class="title">特别鸣谢</div>
-        <div class="organize organizer_center">
-          <img src="@/assets/thanks/thank3.png" alt="">
-        </div>
-        <!--<ul>-->
-          <!--<li>-->
-            <!--<div class="organize">-->
-              <!--<img src="@/assets/thanks/thank3.png" alt="">-->
-            <!--</div>-->
-          <!--</li>-->
-        <!--</ul>-->
+        <!--<div class="organize organizer_center">-->
+          <!--<img src="@/assets/thanks/thank3.png" alt="">-->
+        <!--</div>-->
+        <ul>
+          <li>
+            <div class="organize">
+              <img src="@/assets/thanks/thank3.png" alt="">
+            </div>
+          </li>
+          <li>
+            <div class="organize">
+              <img src="@/assets/thanks/thank4.png" alt="">
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
     <data-hunter-footer/>
@@ -188,7 +193,6 @@
 <script type="text/ecmascript-6">
   export default{
     mounted() {
-      console.log(2);
       document.getElementById("index").style.minHeight = document.documentElement.clientHeight + 'px';
     },
     data() {
@@ -470,15 +474,17 @@
         height: 100%;
       }
     }
-    /*ul {*/
-      /*list-style-type: none;*/
-      /*li {*/
-        /*box-sizing: border-box;*/
-        /*width: 19.5%;*/
-        /*margin: 0 auto 40px auto;*/
-        /*display: inline-block;*/
-      /*}*/
-    /*}*/
+    ul {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      li {
+        box-sizing: border-box;
+        width: 19.5%;
+        margin: 0 10px;
+        display: inline-block;
+      }
+    }
   }
 
 </style>
